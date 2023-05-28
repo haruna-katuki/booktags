@@ -19,7 +19,7 @@
       <p>読書開始日：<%= @book.start_date %></p>
     <% end %>
     <% if user_signed_in? && current_user.id == @book.user_id %>
-      <%= link_to "編集", "#", method: :get, class: "item-red-btn" %>
+      <%= link_to "編集", edit_book_path(@book), method: :get %>
       <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
     <% end %>
   </div>
