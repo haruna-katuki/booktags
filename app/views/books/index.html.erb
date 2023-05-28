@@ -1,7 +1,7 @@
 <h1><%= @user.nickname %>さんの読んだ本一覧</h1>
 <div class="book-lists">
   <% @books.each do |book| %>
-    <div class="book_list">
+    <div class="book-list">
       <%= link_to book_path(book) do %>
         <p>タイトル：<%= book.title %></p>
       <% end %>

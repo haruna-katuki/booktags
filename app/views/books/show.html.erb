@@ -1,1 +1,22 @@
 <h1>詳細</h1>
+<div class="book-details">
+  <div class="book-detail">
+    <p>タイトル：<%= @book.title %></p>
+    <p>編著者：<%= @book.author %></p>
+    <% if @book.translator.present? %>
+      <p>訳者：<%= @book.translator %></p>
+    <% end %>
+    <% if @book.publisher.present? %>
+      <p>出版社：<%= @book.publisher %></p>
+    <% end %>
+    <% if @book.publish_year.present? %>
+      <p>出版年：<%= @book.publish_year %></p>
+    <% end %>
+    <% if @book.total_page.present? %>
+      <p>総ページ数：<%= @book.total_page %></p>
+    <% end %>
+    <% if @book.start_date.present? %>
+      <p>読書開始日：<%= @book.start_date %></p>
+    <% end %>
+  </div>
+</div>
