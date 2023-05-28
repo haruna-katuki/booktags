@@ -1,1 +1,23 @@
 <h1>読書メモ投稿画面</h1>
+<%= form_with model: @book, local: true do |f| %>
+  <div class="memo_field">
+    <div class="memo-text">
+      読書メモ(300字まで)
+    </div>
+    <%= f.text_area :memo, placeholder:"読書メモ(300字まで)" %>
+  </div>
+  <div class="memo_field">
+    <div class="memo-text">
+      ページ数(任意)
+    </div>
+    <%= f.text_field :page, placeholder:"ページ数(任意)" %>
+  </div>
+  <div class="memo_field">
+    <div class="memo-text">
+      ネタバレ防止で非表示にする
+    </div>
+    <% f.label :hidden_check %>
+    <%= f.check_box :hidden_check %>
+  </div>
+  <%= f.submit "投稿する" ,class:"contribute-btn" %>
+<% end %>
