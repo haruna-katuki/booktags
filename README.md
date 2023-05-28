@@ -36,11 +36,12 @@
 
 ## posts テーブル
 
-| Column | Type       | Options                        |
-|--------|------------|--------------------------------|
-| memo   | text       | null: false                    |
-| page   | integer    |                                |
-| book   | references | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+|--------------|------------|--------------------------------|
+| memo         | text       | null: false                    |
+| page         | integer    |                                |
+| hidden_check | boolean    |                                |
+| book         | references | null: false, foreign_key: true |
 
 ### Association
 
