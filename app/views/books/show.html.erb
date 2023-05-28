@@ -20,7 +20,7 @@
     <% end %>
     <% if user_signed_in? && current_user.id == @book.user_id %>
       <%= link_to "編集", edit_book_path(@book), method: :get %>
-      <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
+      <%= link_to "削除", book_path(@book), method: :delete %>
     <% end %>
   </div>
 </div>
