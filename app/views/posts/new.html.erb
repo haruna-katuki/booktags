@@ -1,6 +1,13 @@
 <h1>読書メモ投稿画面</h1>
-<%= form_with model: @book, local: true do |f| %>
+<p><%= link_to '本を登録する', new_book_path %>
+<%= form_with model: @post, local: true do |f| %>
   <div class="memo_field">
+    <select>
+      <option value="">本を選択してください</option>
+      <% @user.books.each do |book| %>
+        <option><%= book.title %></option>
+      <% end %>
+    </select>
     <div class="memo-text">
       読書メモ(300字まで)
     </div>
