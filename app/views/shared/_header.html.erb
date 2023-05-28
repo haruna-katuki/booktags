@@ -1,5 +1,8 @@
 <header>
   <div>
+    <%= link_to 'BookTags', root_path %>
+  </div>
+  <div>
     <ul class='lists-right'>
       <% if user_signed_in? %>
         <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
