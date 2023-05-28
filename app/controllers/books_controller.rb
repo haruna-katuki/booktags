@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_book, only: [:show, :edit, :update]
+  before_action :user_self, only: [:edit, :update]
 
   def new
     @book = Book.new
@@ -42,5 +43,11 @@ class BooksController < ApplicationController
 
   def set_book
     @book = Book.find(params[:id])
+  end
+
+  def user_self
+    unless user_signed_in? && current_user.id == @book.user_id
+      redirect_to root_path
+    end
   end
 end
