@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_book, only: [:show, :edit, :update]
-  before_action :user_self, only: [:edit, :update]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :user_self, only: [:edit, :update, :destroy]
 
   def new
     @book = Book.new
@@ -33,6 +33,11 @@ class BooksController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @book.destroy
+    redirect_to root_path
   end
 
   private
