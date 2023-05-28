@@ -1,0 +1,46 @@
+<h1>本を登録する</h1>
+<%= form_with model: @book, local: true do |f| %>
+  <div class="book_field">
+    <div class="book-text">
+      タイトル ※必須
+    </div>
+    <%= f.text_field :title, placeholder:"タイトル" %>
+  </div>
+  <div class="book_field">
+    <div class="book-text">
+      編著者 ※必須
+    </div>
+    <%= f.text_field :author, placeholder:"編著者" %>
+  </div>
+  <div class="book_field">
+    <div class="book-text">
+      訳者
+    </div>
+    <%= f.text_field :translator, placeholder:"訳者" %>
+  </div>
+  <div class="book_field">
+    <div class="book-text">
+      出版社
+    </div>
+    <%= f.text_field :publisher, placeholder:"出版社" %>
+  </div>
+  <div class="book_field">
+    <div class="book-text">
+      出版年
+    </div>
+    <%= f.text_field :publish_year, placeholder:"出版年" %>
+  </div>
+  <div class="book_field">
+    <div class="book-text">
+      総ページ数 ※半角数字
+    </div>
+    <%= f.text_field :total_page, placeholder:"総ページ数" %>
+  </div>
+  <div class="book_field">
+    <div class="book-text">
+      読書開始日
+    </div>
+    <%= f.date_field :start_date %>
+  </div>
+  <%= f.submit "登録する" ,class:"register-btn" %>
+<% end %>
