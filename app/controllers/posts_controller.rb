@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_post, only: [:show, :edit]
+  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_user, only: [:new, :create, :edit, :update]
 
   def index
     @posts = Post.includes(:book).order("created_at DESC")
@@ -8,12 +9,10 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @user = current_user
   end
 
   def create
     @post = Post.new(post_params)
-    @user = current_user
     if @post.save
       redirect_to root_path
     else
@@ -25,7 +24,14 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @user = current_user
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
   end
 
   private
@@ -36,6 +42,10 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user
   end
 
 end
