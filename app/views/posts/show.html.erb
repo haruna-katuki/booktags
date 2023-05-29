@@ -8,4 +8,8 @@
   <% end %>
   <div><%= @post.book.user.nickname %></div>
   <div><%= l @post.created_at %></div>
+  <% if user_signed_in? && current_user.id == @post.book.user_id %>
+      <%= link_to "編集", edit_post_path(@post), method: :get %>
+      <%= link_to "削除", post_path(@post), method: :delete %>
+    <% end %>
 </div>
