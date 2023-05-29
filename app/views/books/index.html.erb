@@ -6,6 +6,14 @@
         <p>タイトル：<%= book.title %></p>
       <% end %>
       <p>編著者：<%= book.author %></p>
+      <div class="book-post_lists">
+        <% book.posts.order("created_at DESC").each do |post| %>
+          <div><%= post.memo %></div>
+          <% if post.page.present? %>
+            <div><%= post.page %></div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
