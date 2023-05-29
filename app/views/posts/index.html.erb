@@ -6,14 +6,14 @@
       <div class="post-list">
         <div><%= post.book.title %></div>
         <div><%= post.book.author %></div>
-        <div>読書メモを表示する</div>
+        <%= link_to "感想を表示する", post_path(post) %>
         <div><%= post.book.user.nickname %></div>
       </div>
     <% else %>
       <div class="post-list">
         <div><%= post.book.title %></div>
         <div><%= post.book.author %></div>
-        <div><%= post.memo %></div>
+        <div><%= link_to post.memo, post_path(post) %></div>
         <% if post.page.present? %>
           <div><%= post.page %></div>
         <% end %>
