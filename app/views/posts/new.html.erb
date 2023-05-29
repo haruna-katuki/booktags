@@ -2,10 +2,10 @@
 <p><%= link_to '本を登録する', new_book_path %>
 <%= form_with model: @post, local: true do |f| %>
   <div class="memo_field">
-    <select>
+    <select name="post[book_id]">
       <option value="">本を選択してください</option>
-      <% @user.books.each do |book| %>
-        <option><%= book.title %></option>
+      <% @user.books.all.each do |book| %>
+        <option value=<%= book.id %>><%= book.title %></option>
       <% end %>
     </select>
     <div class="memo-text">
