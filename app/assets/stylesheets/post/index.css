@@ -1,21 +1,21 @@
-body {
-  overflow: scroll;
-}
-
 .main-content {
+  height: calc(100vh - 80px);
   width: 100vw;
   display: flex;
   justify-content: center;
   background-color: #90CE9C;
+  overflow: hidden;
 }
 
 .post-lists {
   width: 600px;
   height: 100%;
   padding-top: 15px;
+  padding-bottom: 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .post-list {
