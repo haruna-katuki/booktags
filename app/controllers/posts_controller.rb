@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_post, only: [:show, :edit]
 
   def index
     @posts = Post.includes(:book).order("created_at DESC")
@@ -21,10 +22,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
+    @user = current_user
   end
 
   private
@@ -32,4 +33,9 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:book_id, :memo, :page, :hidden_check)
   end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
 end

@@ -1,5 +1,5 @@
 <h1>読書メモ投稿画面</h1>
-<p><%= link_to '本を登録する', new_book_path %>
+<div><%= link_to '本を登録する', new_book_path %></div>
 <%= form_with model: @post, local: true do |f| %>
   <div class="memo_field">
     <select name="post[book_id]">
