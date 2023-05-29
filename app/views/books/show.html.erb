@@ -18,6 +18,22 @@
     <% if @book.start_date.present? %>
       <p>読書開始日：<%= @book.start_date %></p>
     <% end %>
+    <div class="book-post-lists">
+        <% @book.posts.order("created_at DESC").each do |post| %>
+          <% if post.hidden_check %>
+            <div class="book-post-list">
+              <div>読書メモを表示する</div>
+            </div>
+          <% else %>
+            <div class="book-post-list">
+              <div><%= post.memo %></div>
+                <% if post.page.present? %>
+                  <div><%= post.page %></div>
+                <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     <% if user_signed_in? && current_user.id == @book.user_id %>
       <%= link_to "編集", edit_book_path(@book), method: :get %>
       <%= link_to "削除", book_path(@book), method: :delete %>
