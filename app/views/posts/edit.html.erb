@@ -10,7 +10,6 @@
           本を選択してください
         </div>
         <select name="post[book_id]", class="post-pull-down">
-          <option value="">---</option>
           <% @user.books.all.each do |book| %>
             <option value=<%= book.id %>><%= book.title %></option>
           <% end %>
