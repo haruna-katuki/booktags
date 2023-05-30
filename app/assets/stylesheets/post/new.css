@@ -1,0 +1,91 @@
+.post-form {
+  width: 600px;
+  background-color: ivory;
+  box-sizing: border-box;
+  border: #004F2A 2px solid;
+  margin-top: 30px;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-form-text {
+  font-size: 30px;
+  color: #004F2A;
+  font-weight: bold;
+}
+
+.book-link {
+  text-decoration: none;
+}
+
+.book-btn {
+  height: 40px;
+  width: 250px;
+  background-color: white;
+  font-size: 25px;
+  color: #F0566E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #F0566E 2px solid;
+  margin-top: 20px;
+}
+
+.post-field {
+  margin-top: 30px;
+}
+
+.post-text {
+  font-size: 18px;
+}
+
+.post-pull-down {
+  height: 30px;
+  width: 400px;
+  font-size: 18px;
+}
+
+.post-field-memo {
+  height: 200px;
+  width: 400px;
+  font-size: 18px;
+}
+
+.post-field-page {
+  height: 30px;
+  width: 400px;
+  font-size: 18px;
+}
+
+.post-field-check-box {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.check-box {
+  margin-top: 10px;
+  height: 25px;
+  width: 25px;
+}
+
+.post-form-under {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contribute-btn {
+  height: 50px;
+  width: 150px;
+  background-color: #004F2A;
+  font-size: 25px;
+  color: ivory;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
