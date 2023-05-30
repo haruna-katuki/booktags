@@ -1,17 +1,15 @@
 .detail-main-content {
-  height: calc(100vh - 80px);
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #90CE9C;
-  overflow: hidden;
 }
 
 .post-detail {
   width: 850px;
   background-color: ivory;
   margin: 30px;
+  box-sizing: border-box;
+  border: #004F2A 2px solid;
 }
 
 .post-detail-upper {
@@ -26,6 +24,7 @@
   font-size: 35px;
   color: ivory;
   padding-left: 20px;
+  overflow: hidden;
 }
 
 .post-detail-author {

@@ -1,26 +1,28 @@
-<div class="detail-main-content">
-  <div class="post-detail">
-    <div class="post-detail-upper">
-      <div class="post-detail-title"><%= @post.book.title %></div>
-      <div class="post-detail-author"><%= @post.book.author %></div>
+<div class="main-content">
+  <div class="detail-main-content">
+    <div class="post-detail">
+      <div class="post-detail-upper">
+        <div class="post-detail-title"><%= @post.book.title %></div>
+        <div class="post-detail-author"><%= @post.book.author %></div>
+      </div>
+      <div class="post-detail-memo"><%= @post.memo %></div>
+      <div class="post-detail-under">
+        <% if @post.page.present? %>
+          <div class="post-detail-page"><%= @post.page %>ページ</div>
+        <% end %>
+        <div class="post-detail-time"><%= l @post.created_at %></div>
+        <div class="post-detail-nickname"><%= @post.book.user.nickname %></div>
+      </div>
     </div>
-    <div class="post-detail-memo"><%= @post.memo %></div>
-    <div class="post-detail-under">
-      <% if @post.page.present? %>
-        <div class="post-detail-page"><%= @post.page %>ページ</div>
-      <% end %>
-      <div class="post-detail-time"><%= l @post.created_at %></div>
-      <div class="post-detail-nickname"><%= @post.book.user.nickname %></div>
-    </div>
+    <% if user_signed_in? && current_user.id == @post.book.user.id %>
+      <div class="detail-btn">
+        <%= link_to edit_post_path(@post), method: :get, class: "edit-link" do %>
+          <div class="edit-btn">編集</div>
+        <% end %>
+        <%= link_to post_path(@post), method: :delete, class: "delete-link" do %>
+          <div class="delete-btn">削除</div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-  <% if user_signed_in? && current_user.id == @post.book.user.id %>
-    <div class="detail-btn">
-      <%= link_to edit_post_path(@post), method: :get, class: "edit-link" do %>
-        <div class="edit-btn">編集</div>
-      <% end %>
-      <%= link_to post_path(@post), method: :delete, class: "delete-link" do %>
-        <div class="delete-btn">削除</div>
-      <% end %>
-    </div>
-  <% end %>
 </div>
