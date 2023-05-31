@@ -1,12 +1,12 @@
 <div class="main-content">
-  <div class="post-form">
-    <div class="post-form-text">読書メモを投稿する</div>
+  <div class="form">
+    <div class="form-text">読書メモを投稿する</div>
     <%= link_to new_book_path, class: "book-link" do %>
       <div class="book-btn">本を登録する</div>
     <% end %>
     <%= form_with model: @post, local: true do |f| %>
-      <div class="post-field">
-        <div class="post-text">
+      <div class="field">
+        <div class="text">
           本を選択してください
         </div>
         <select name="post[book_id]", class="post-pull-down">
@@ -16,26 +16,26 @@
           <% end %>
         </select>
       </div>
-      <div class="post-field">
-        <div class="post-text">
+      <div class="field">
+        <div class="text">
           読書メモ(300字まで)
         </div>
         <%= f.text_area :memo, placeholder:"読書メモ(300字まで)", class: "post-field-memo" %>
       </div>
-      <div class="post-field">
-        <div class="post-text">
-          ページ数(任意)
+      <div class="field">
+        <div class="text">
+          ページ数(任意、半角数字)
         </div>
-        <%= f.text_field :page, placeholder:"ページ数(任意)", class: "post-field-page" %>
+        <%= f.text_field :page, placeholder:"ページ数(任意)", class: "form-field" %>
       </div>
       <div class="post-field-check-box">
-        <div class="post-text">
+        <div class="text">
           ！ネタバレ防止で非表示にする！
         </div>
         <% f.label :hidden_check %>
         <%= f.check_box :hidden_check, class: "check-box" %>
       </div>
-      <div class="post-form-under">
+      <div class="form-under">
         <%= f.submit "投稿する" ,class:"contribute-btn" %>
       </div>
     <% end %>

@@ -1,4 +1,4 @@
-.post-form {
+.form {
   width: 600px;
   background-color: ivory;
   box-sizing: border-box;
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.post-form-text {
+.form-text {
   font-size: 30px;
   color: #004F2A;
   font-weight: bold;
@@ -33,11 +33,11 @@
   margin-top: 20px;
 }
 
-.post-field {
+.field {
   margin-top: 30px;
 }
 
-.post-text {
+.text {
   font-size: 18px;
   color: #004F2A;
 }
@@ -54,7 +54,7 @@
   font-size: 18px;
 }
 
-.post-field-page {
+.form-field {
   height: 30px;
   width: 400px;
   font-size: 18px;
@@ -73,7 +73,7 @@
   width: 25px;
 }
 
-.post-form-under {
+.form-under {
   display: flex;
   justify-content: center;
   margin-top: 30px;
