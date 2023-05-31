@@ -11,7 +11,7 @@
         </div>
         <select name="post[book_id]", class="post-pull-down">
           <option value="">---</option>
-          <% @user.books.all.each do |book| %>
+          <% @user.books.order("created_at DESC").each do |book| %>
             <option value=<%= book.id %>><%= book.title %></option>
           <% end %>
         </select>

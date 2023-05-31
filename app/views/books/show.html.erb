@@ -31,22 +31,24 @@
         <% end %>
       </div>
       <% end %>
-      <div class="book-detail-post-lists">
-        <% @book.posts.order("created_at DESC").each do |post| %>
-          <% if post.hidden_check %>
-            <div class="book-post-list">
-              <div class="book-post-hidden"><%= link_to "読書メモを表示する", post_path(post) %></div>
-            </div>
-          <% else %>
-            <div class="book-post-list">
-              <div class="book-post-memo"><%= link_to post.memo, post_path(post) %></div>
-                <% if post.page.present? %>
-                  <div class="book-post-page"><%= post.page %>ページ</div>
-                <% end %>
-            </div>
+      <% if @book.posts.present? %>
+        <div class="book-detail-post-lists">
+          <% @book.posts.order("created_at DESC").each do |post| %>
+            <% if post.hidden_check %>
+              <div class="book-post-list">
+                <div class="book-post-hidden"><%= link_to "読書メモを表示する", post_path(post) %></div>
+              </div>
+            <% else %>
+              <div class="book-post-list">
+                <div class="book-post-memo"><%= link_to post.memo, post_path(post) %></div>
+                  <% if post.page.present? %>
+                    <div class="book-post-page"><%= post.page %>ページ</div>
+                  <% end %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
