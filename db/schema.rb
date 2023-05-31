@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_29_030827) do
+ActiveRecord::Schema.define(version: 2023_05_31_105413) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -34,6 +34,19 @@ ActiveRecord::Schema.define(version: 2023_05_29_030827) do
     t.boolean "hidden_check"
     t.bigint "book_id", null: false
     t.index ["book_id"], name: "index_posts_on_book_id"
+  end
+
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "favorite_genre"
+    t.string "favorite_book1"
+    t.string "favorite_book2"
+    t.string "favorite_book3"
+    t.string "favorite_author1"
+    t.string "favorite_author2"
+    t.string "favorite_author3"
+    t.date "birth_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
