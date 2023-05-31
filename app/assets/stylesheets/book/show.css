@@ -1,0 +1,58 @@
+.book-detail {
+  width: 600px;
+}
+
+.book-detail-information {
+  padding: 15px 20px;
+  background-color: #004F2A;
+}
+
+.book-detail-title {
+  font-size: 25px;
+  color: ivory;
+}
+
+.book-detail-right {
+  font-size: 20px;
+  color: ivory;
+  text-align: right;
+}
+
+.book-detail-btn {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-edit-link, .book-delete-link {
+  text-decoration: none;
+}
+
+.book-edit-btn {
+  height: 60px;
+  width: 150px;
+  background-color: #67A7CC;
+  font-size: 30px;
+  color: white;
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-delete-btn {
+  height: 60px;
+  width: 150px;
+  background-color: #F0566E;
+  font-size: 30px;
+  color: white;
+  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-detail-post-lists {
+  margin-top: 30px;
+  border-top: #004F2A 2px solid;
+}

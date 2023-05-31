@@ -1,17 +1,19 @@
 <header>
-  <div>
-    <%= link_to 'BookTags', root_path %>
-  </div>
-  <div>
-    <ul class='lists-right'>
-      <% if user_signed_in? %>
-        <li><%= link_to 'マイページ', books_path %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-        <li><%= link_to '読書メモを投稿する', new_post_path %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
-    </ul>
+  <div class="header-content">
+    <div class="logo">
+      <%= link_to 'BookTags', root_path %>
+    </div>
+    <div>
+      <ul class='lists-right'>
+        <% if user_signed_in? %>
+          <li class="header-list"><%= link_to 'マイページ', books_path %></li>
+          <li class="header-list"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+          <li class="header-list"><%= link_to '読書メモ', new_post_path %></li>
+        <% else %>
+          <li class="header-list"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+          <li class="header-list"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </header>

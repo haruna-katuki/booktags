@@ -1,0 +1,99 @@
+.detail-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-detail {
+  width: 850px;
+  background-color: ivory;
+  margin-top: 30px;
+  box-sizing: border-box;
+  border: #004F2A 2px solid;
+}
+
+.post-detail-upper {
+  height: 80px;
+  background-color: #004F2A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-detail-title {
+  font-size: 35px;
+  color: ivory;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+.post-detail-author {
+  font-size: 25px;
+  color: ivory;
+  padding-right: 20px;
+}
+
+.post-detail-memo {
+  font-size: 25px;
+  color: #004F2A;
+  padding: 15px 20px;
+}
+
+.post-detail-under {
+  height: 30px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.post-detail-page, .post-detail-time {
+  font-size: 20px;
+  color: #004F2A;
+  margin-right: 50px;
+}
+
+.post-detail-nickname {
+  font-size: 20px;
+  color: #004F2A;
+  margin-right: 20px;
+}
+
+.detail-btn {
+  width: 850px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-link {
+  text-decoration: none;
+}
+
+.edit-btn {
+  height: 60px;
+  width: 150px;
+  background-color: #67A7CC;
+  font-size: 30px;
+  color: white;
+  margin-left: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-link {
+  text-decoration: none;
+}
+
+.delete-btn {
+  height: 60px;
+  width: 150px;
+  background-color: #F0566E;
+  font-size: 30px;
+  color: white;
+  margin-right: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
