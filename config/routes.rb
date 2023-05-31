@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :books
   resources :posts
-  resources :profiles, only: :index
+  resources :profiles, only: [:index, :new, :create]
 end
