@@ -1,0 +1,10 @@
+<div class="another-main-content">
+  <%= render partial: "shared/side_bar", locals: { user: @user } %>
+  <div class="right-content">
+    <% if @user.profile.present? %>
+      <div>プロフィール</div>
+    <% else %>
+      <div>プロフィールを登録する</div>
+    <% end %>
+  </div>
+</div>
