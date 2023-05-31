@@ -1,3 +1,76 @@
 .another-main-content {
   display: flex;
 }
+
+.right-content {
+  width: calc(100vw - 200px);
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-nickname {
+  font-size: 30px;
+  color: #004F2A;
+}
+
+.book-list {
+  width: 600px;
+  margin-top: 40px;
+}
+
+.book-information {
+  height: 65px;
+  padding: 15px 20px;
+  background-color: #004F2A;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-information-title a {
+  text-decoration: none;
+  font-size: 25px;
+  color: ivory;
+}
+
+.book-information-author {
+  font-size: 20px;
+  color: ivory;
+  text-align: right;
+}
+
+.book-post-list {
+  background-color: ivory;
+  border-left: #004F2A 2px solid;
+  border-right: #004F2A 2px solid;
+  border-bottom: #004F2A 2px solid;
+}
+
+.book-post-hidden {
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-post-hidden a {
+  text-decoration: none;
+  color: #004F2A;
+}
+
+.book-post-memo {
+  padding: 10px 15px;
+}
+
+.book-post-memo a {
+  text-decoration: none;
+  color: #004F2A;
+}
+
+.book-post-page {
+  color: #004F2A;
+  padding: 0 15px 10px 0;
+  text-align: right;
+}
