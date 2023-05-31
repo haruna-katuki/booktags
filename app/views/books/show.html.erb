@@ -1,42 +1,52 @@
-<h1>詳細</h1>
-<div class="book-details">
-  <div class="book-detail">
-    <p>タイトル：<%= @book.title %></p>
-    <p>編著者：<%= @book.author %></p>
-    <% if @book.translator.present? %>
-      <p>訳者：<%= @book.translator %></p>
-    <% end %>
-    <% if @book.publisher.present? %>
-      <p>出版社：<%= @book.publisher %></p>
-    <% end %>
-    <% if @book.publish_year.present? %>
-      <p>出版年：<%= @book.publish_year %></p>
-    <% end %>
-    <% if @book.total_page.present? %>
-      <p>総ページ数：<%= @book.total_page %></p>
-    <% end %>
-    <% if @book.start_date.present? %>
-      <p>読書開始日：<%= @book.start_date %></p>
-    <% end %>
-    <div class="book-post-lists">
+<div class="another-main-content">
+  <%= render partial: "shared/side_bar", locals: { user: @book.user } %>
+  <div class="right-content">
+    <div class="book-detail">
+      <div class="book-detail-information">
+        <div class="book-detail-title"><%= @book.title %></div>
+        <div class="book-detail-right">編著者：<%= @book.author %></div>
+        <% if @book.translator.present? %>
+          <div class="book-detail-right">訳者：<%= @book.translator %></div>
+        <% end %>
+        <% if @book.publisher.present? %>
+          <div class="book-detail-right">出版社：<%= @book.publisher %></div>
+        <% end %>
+        <% if @book.publish_year.present? %>
+          <div class="book-detail-right">出版年：<%= @book.publish_year %></div>
+        <% end %>
+        <% if @book.total_page.present? %>
+          <div class="book-detail-right">総ページ数：<%= @book.total_page %></div>
+        <% end %>
+        <% if @book.start_date.present? %>
+          <div class="book-detail-right">読書開始日：<%= @book.start_date %></div>
+        <% end %>
+      </div>
+      <% if user_signed_in? && current_user.id == @book.user_id %>
+        <div class="book-detail-btn">
+        <%= link_to edit_book_path(@book), method: :get, class: "book-edit-link" do %>
+          <div class="book-edit-btn">編集</div>
+        <% end %>
+        <%= link_to book_path(@book), method: :delete, class: "book-delete-link" do %>
+          <div class="book-delete-btn">削除</div>
+        <% end %>
+      </div>
+      <% end %>
+      <div class="book-detail-post-lists">
         <% @book.posts.order("created_at DESC").each do |post| %>
           <% if post.hidden_check %>
             <div class="book-post-list">
-              <div><%= link_to "読書メモを表示する", post_path(post) %></div>
+              <div class="book-post-hidden"><%= link_to "読書メモを表示する", post_path(post) %></div>
             </div>
           <% else %>
             <div class="book-post-list">
-              <div><%= link_to post.memo, post_path(post) %></div>
+              <div class="book-post-memo"><%= link_to post.memo, post_path(post) %></div>
                 <% if post.page.present? %>
-                  <div><%= post.page %></div>
+                  <div class="book-post-page"><%= post.page %>ページ</div>
                 <% end %>
             </div>
           <% end %>
         <% end %>
       </div>
-    <% if user_signed_in? && current_user.id == @book.user_id %>
-      <%= link_to "編集", edit_book_path(@book), method: :get %>
-      <%= link_to "削除", book_path(@book), method: :delete %>
-    <% end %>
+    </div>
   </div>
 </div>
