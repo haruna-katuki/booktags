@@ -1,27 +1,32 @@
-<h1><%= @user.nickname %>さんの読んだ本一覧</h1>
-<div class="book-lists">
-  <% @books.each do |book| %>
-    <div class="book-list">
-      <%= link_to book_path(book) do %>
-        <p>タイトル：<%= book.title %></p>
-      <% end %>
-      <p>編著者：<%= book.author %></p>
-      <div class="book-post-lists">
-        <% book.posts.order("created_at DESC").first(3).each do |post| %>
-          <% if post.hidden_check %>
-            <div class="book-post-list">
-              <div><%= link_to "読書メモを表示する", post_path(post) %></div>
-            </div>
-          <% else %>
-            <div class="book-post-list">
-              <div><%= link_to post.memo, post_path(post) %></div>
-                <% if post.page.present? %>
-                  <div><%= post.page %></div>
-                <% end %>
-            </div>
+<div class="another-main-content">
+  <%= render partial: "shared/side_bar", locals: { user: @user } %>
+  <div class="right-content">
+    <h1><%= @user.nickname %>さんの読んだ本一覧</h1>
+    <div class="book-lists">
+      <% @books.order("created_at DESC").each do |book| %>
+        <div class="book-list">
+          <%= link_to book_path(book) do %>
+            <p>タイトル：<%= book.title %></p>
           <% end %>
-        <% end %>
-      </div>
+          <p>編著者：<%= book.author %></p>
+          <div class="book-post-lists">
+            <% book.posts.order("created_at DESC").first(3).each do |post| %>
+              <% if post.hidden_check %>
+                <div class="book-post-list">
+                  <div><%= link_to "読書メモを表示する", post_path(post) %></div>
+                </div>
+              <% else %>
+                <div class="book-post-list">
+                  <div><%= link_to post.memo, post_path(post) %></div>
+                  <% if post.page.present? %>
+                    <div><%= post.page %></div>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
