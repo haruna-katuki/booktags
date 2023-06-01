@@ -38,7 +38,7 @@
           <div class="text">
             生年月日
           </div>
-          <%= f.date_field :birth_date, class: "form-field" %>
+          <%= f.date_select :birth_date, {start_year: 1930, end_year: 2023, use_month_numbers: true, prompt: "--"}, {class: "birth-date"} %>
         </div>
         <div class="form-under">
           <%= f.submit "登録する" ,class:"contribute-btn" %>
