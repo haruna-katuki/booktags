@@ -23,13 +23,13 @@
       </div>
       <% if user_signed_in? && current_user.id == @book.user_id %>
         <div class="book-detail-btn">
-        <%= link_to edit_book_path(@book), method: :get, class: "book-edit-link" do %>
-          <div class="book-edit-btn">編集</div>
-        <% end %>
-        <%= link_to book_path(@book), method: :delete, class: "book-delete-link" do %>
-          <div class="book-delete-btn">削除</div>
-        <% end %>
-      </div>
+          <%= link_to edit_book_path(@book), method: :get, class: "book-edit-link" do %>
+            <div class="book-edit-btn">編集</div>
+          <% end %>
+          <%= link_to book_path(@book), method: :delete, class: "book-delete-link" do %>
+            <div class="book-delete-btn">削除</div>
+          <% end %>
+        </div>
       <% end %>
       <% if @book.posts.present? %>
         <div class="book-detail-post-lists">
