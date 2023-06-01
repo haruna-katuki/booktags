@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   before_action :user_set, only: [:index, :new, :create]
 
   def index
+    @profile = @user.profile
   end
 
   def new

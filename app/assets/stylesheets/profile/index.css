@@ -1,0 +1,32 @@
+.profile {
+  height: 800px;
+  width: 600px;
+  background-color: ivory;
+  box-sizing: border-box;
+  border: #004F2A 2px solid;
+  margin-top: 30px;
+  padding: 20px 0px;
+}
+
+.profile-nickname {
+  font-size: 35px;
+  color: #004F2A;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.profile-element {
+  padding: 20px 40px;
+}
+
+.profile-left-text {
+  font-size: 27px;
+  color: #004F2A;
+}
+
+.profile-right-text {
+  font-size: 23px;
+  color: #004F2A;
+  margin-top: 10px;
+  text-align: right;
+}
