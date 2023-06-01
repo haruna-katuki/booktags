@@ -1,0 +1,49 @@
+<div class="another-main-content">
+  <%= render partial: "shared/side_bar", locals: { user: @user } %>
+  <div class="right-content">
+    <div class="form">
+      <div class="form-text">プロフィールを登録する</div>
+      <%= form_with model: @profile, local: true do |f| %>
+        <div class="field">
+          <div class="text">
+            好きなジャンル
+          </div>
+          <%= f.text_field :favorite_genre, placeholder:"好きなジャンル", class: "form-field" %>
+        </div>
+        <div class="field">
+          <div class="text">
+            好きな本
+          </div>
+          <%= f.text_field :favorite_book1, placeholder:"好きな本", class: "form-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :favorite_book2, placeholder:"好きな本", class: "form-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :favorite_book3, placeholder:"好きな本", class: "form-field" %>
+        </div>
+        <div class="field">
+          <div class="text">
+            好きな著者
+          </div>
+          <%= f.text_field :favorite_author1, placeholder:"好きな著者", class: "form-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :favorite_author2, placeholder:"好きな著者", class: "form-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :favorite_author3, placeholder:"好きな著者", class: "form-field" %>
+        </div>
+        <div class="field">
+          <div class="text">
+            生年月日
+          </div>
+          <%= f.date_select :birth_date, {start_year: 1930, end_year: 2023, use_month_numbers: true, prompt: "--"}, {class: "birth-date"} %>
+        </div>
+        <div class="form-under">
+          <%= f.submit "登録する" ,class:"contribute-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
