@@ -2,57 +2,9 @@
   <%= render partial: "shared/side_bar", locals: { user: @user } %>
   <div class="right-content">
     <% if @profile.present? %>
-      <div class="profile">
-        <div class="profile-nickname"><%= @user.nickname %>さんのプロフィール</div>
-        <div class="profile-element">
-          <div class="profile-left-text">好きなジャンル</div>
-          <% if @profile.favorite_genre.present? %>
-            <div class="profile-right-text"><%= @profile.favorite_genre %></div>
-          <% end %>
-        </div>
-        <div class="profile-element">
-          <div class="profile-left-text">好きな本</div>
-          <% if @profile.favorite_book1.present? %>
-            <div class="profile-right-text"><%= @profile.favorite_book1 %></div>
-          <% end %>
-          <% if @profile.favorite_book2.present? %>
-            <div class="profile-right-text"><%= @profile.favorite_book2 %></div>
-          <% end %>
-          <% if @profile.favorite_book3.present? %>
-            <div class="profile-right-text"><%= @profile.favorite_book3 %></div>
-          <% end %>
-        </div>
-        <div class="profile-element">
-          <div class="profile-left-text">好きな本</div>
-          <% if @profile.favorite_author1.present? %>
-            <div class="profile-right-text"><%= @profile.favorite_author1 %></div>
-          <% end %>
-          <% if @profile.favorite_author2.present? %>
-            <div class="profile-right-text"><%= @profile.favorite_author2 %></div>
-          <% end %>
-          <% if @profile.favorite_author3.present? %>
-            <div class="profile-right-text"><%= @profile.favorite_author3 %></div>
-          <% end %>
-        </div>
-        <div class="profile-element">
-          <div class="profile-left-text">生年月日</div>
-          <% if @profile.birth_date.present? %>
-            <div class="profile-right-text"><%= @profile.birth_date %></div>
-          <% end %>
-        </div>
-        <% if user_signed_in? && current_user.id == @profile.user_id %>
-          <div class="book-detail-btn">
-            <%= link_to edit_profile_path(@profile), method: :get, class: "book-edit-link" do %>
-              <div class="book-edit-btn">編集</div>
-            <% end %>
-            <%= link_to profile_path(@profile), method: :delete, class: "book-delete-link" do %>
-              <div class="book-delete-btn">削除</div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
+      <%= render partial: "profile", locals: { user: @user, profile: @profile } %>
     <% else %>
-      <div><%= link_to "プロフィールを登録する", new_profile_path %></div>
+      <div class="profile-btn"><%= link_to "プロフィールを登録する", new_profile_path %></div>
     <% end %>
   </div>
 </div>
