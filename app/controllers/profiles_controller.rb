@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :user_set, only: [:index, :new, :create]
+  before_action :user_set, only: [:index, :new, :create, :edit]
 
   def index
     @profile = @user.profile
@@ -16,6 +16,10 @@ class ProfilesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @profile = Profile.find(params[:id])
   end
 
   private
