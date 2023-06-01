@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :user_set, only: [:index, :new, :create, :edit, :update]
-  before_action :profile_set, only: [:edit, :update]
+  before_action :user_set, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :profile_set, only: [:edit, :update, :destroy]
 
   def index
     @profile = @user.profile
@@ -28,6 +28,11 @@ class ProfilesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @profile.destroy
+    redirect_to profiles_path
   end
 
   private
