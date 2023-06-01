@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :user_set, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :profile_set, only: [:edit, :update, :destroy]
+  before_action :user_self, only: [:edit, :update, :destroy]
 
   def index
     @profile = @user.profile
@@ -48,5 +49,11 @@ class ProfilesController < ApplicationController
 
   def profile_set
     @profile = Profile.find(params[:id])
+  end
+
+  def user_self
+    unless user_signed_in? && current_user.id == @profile.user_id
+      redirect_to root_path
+    end
   end
 end
