@@ -40,6 +40,16 @@
             <div class="profile-right-text"><%= @profile.birth_date %></div>
           <% end %>
         </div>
+        <% if user_signed_in? && current_user.id == @profile.user_id %>
+          <div class="book-detail-btn">
+            <%= link_to edit_profile_path(@profile), method: :get, class: "book-edit-link" do %>
+              <div class="book-edit-btn">編集</div>
+            <% end %>
+            <%= link_to profile_path(@profile), method: :delete, class: "book-delete-link" do %>
+              <div class="book-delete-btn">削除</div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     <% else %>
       <div><%= link_to "プロフィールを登録する", new_profile_path %></div>
