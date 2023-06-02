@@ -14,6 +14,8 @@ class LikesController < ApplicationController
   end
 
   def index
+    @user = current_user
+    @likes = @user.likes.includes(post: [book: :user]).order("created_at DESC")
   end
 
   private
