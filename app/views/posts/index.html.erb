@@ -18,6 +18,13 @@
           </div>
           <div class="post-memo"><%= link_to post.memo, post_path(post) %></div>
           <div class="post-under">
+            <div id="like-btn<%= post.id %>", class="post-under-like">
+              <% if user_signed_in? && post.liked_by?(current_user)%>
+                <%=link_to "いいね済", post_likes_path(post.id),  method: :delete, class: "post-like" %>
+              <% else %>
+                <%=link_to "いいねする", post_likes_path(post.id), method: :post, class: "post-like" %>
+              <% end %>
+            </div>
             <% if post.page.present? %>
               <div class="post-under-page"><%= post.page %>ページ</div>
             <% end %>
