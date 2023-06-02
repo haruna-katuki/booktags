@@ -45,6 +45,17 @@
   display: flex;
   justify-content: right;
   align-items: center;
+  position: relative;
+}
+
+.post-detail-under-like {
+  height: 35px;
+  margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 20px;
 }
 
 .post-detail-page, .post-detail-time {

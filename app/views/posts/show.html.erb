@@ -7,6 +7,9 @@
       </div>
       <div class="post-detail-memo"><%= @post.memo %></div>
       <div class="post-detail-under">
+      <div id="like-btn<%= @post.id %>", class="post-detail-under-like">
+        <%= render partial: "likes/like", locals: { post: @post } %>
+      </div>
         <% if @post.page.present? %>
           <div class="post-detail-page"><%= @post.page %>ページ</div>
         <% end %>
