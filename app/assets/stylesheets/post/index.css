@@ -23,7 +23,6 @@
 }
 
 .post-hidden-list {
-  height: 150px;
   width: 600px;
   background-color: ivory;
   margin-bottom: 45px;
@@ -86,6 +85,41 @@
   height: 35px;
   display: flex;
   justify-content: right;
+  align-items: center;
+  position: relative;
+}
+
+.post-under-like {
+  height: 35px;
+  margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 15px;
+}
+
+.post-like-delete {
+  height: 30px;
+  width: 85px;
+  background-color: #F68B1E;
+  text-decoration: none;
+  color: ivory;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-like-create {
+  height: 30px;
+  width: 95px;
+  text-decoration: none;
+  color: #F68B1E;
+  border-radius: 15px;
+  border: #F68B1E 1px solid;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 

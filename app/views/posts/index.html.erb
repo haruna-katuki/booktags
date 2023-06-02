@@ -8,7 +8,12 @@
             <div class="post-upper-author"><%= post.book.author %></div>
           </div>
           <div class="post-hidden"><%= link_to "読書メモを表示する", post_path(post) %></div>
-          <div class="post-hidden-nickname"><%= post.book.user.nickname %></div>
+          <div class="post-under">
+            <div id="like-btn<%= post.id %>", class="post-under-like">
+              <%= render partial: "likes/like", locals: { post: post } %>
+            </div>
+            <div class="post-under-nickname"><%= post.book.user.nickname %></div>
+          </div>
         </div>
       <% else %>
         <div class="post-list">
@@ -18,6 +23,9 @@
           </div>
           <div class="post-memo"><%= link_to post.memo, post_path(post) %></div>
           <div class="post-under">
+            <div id="like-btn<%= post.id %>", class="post-under-like">
+              <%= render partial: "likes/like", locals: { post: post } %>
+            </div>
             <% if post.page.present? %>
               <div class="post-under-page"><%= post.page %>ページ</div>
             <% end %>
