@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :user_self, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.includes(:book).order("created_at DESC")
+    @posts = Post.includes(book: :user).order("created_at DESC")
   end
 
   def new

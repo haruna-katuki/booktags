@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :set_post
+  before_action :set_post, only: [:create, :destroy]
 
   def create
     like = current_user.likes.build(post_id: params[:post_id])
@@ -11,6 +11,11 @@ class LikesController < ApplicationController
     like = Like.find_by(post_id: params[:post_id], user_id: current_user.id)
     like.destroy
     render 'destroy.js.erb'
+  end
+
+  def index
+    @user = current_user
+    @likes = @user.likes.includes(post: [book: :user]).order("created_at DESC")
   end
 
   private
