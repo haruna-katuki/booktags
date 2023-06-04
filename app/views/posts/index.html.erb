@@ -12,7 +12,9 @@
             <div id="like-btn<%= post.id %>", class="post-under-like">
               <%= render partial: "likes/like", locals: { post: post } %>
             </div>
-            <div class="post-under-nickname"><%= post.book.user.nickname %></div>
+            <div class="post-under-nickname">
+              <%= link_to post.book.user.nickname, books_path(user_id: post.book.user) %>
+            </div>
           </div>
         </div>
       <% else %>
@@ -29,7 +31,9 @@
             <% if post.page.present? %>
               <div class="post-under-page"><%= post.page %>ページ</div>
             <% end %>
-            <div class="post-under-nickname"><%= post.book.user.nickname %></div>
+            <div class="post-under-nickname">
+              <%= link_to post.book.user.nickname, books_path(user_id: post.book.user) %>
+            </div>
           </div>
         </div>
       <% end %>
