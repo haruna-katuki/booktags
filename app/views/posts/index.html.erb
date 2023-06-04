@@ -4,7 +4,9 @@
       <% if post.hidden_check %>
         <div class="post-hidden-list">
           <div class="post-upper">
-            <div class="post-upper-title"><%= post.book.title %></div>
+            <div class="post-upper-title">
+              <%= link_to post.book.title, book_path(post.book, user_id: post.book.user) %>
+            </div>
             <div class="post-upper-author"><%= post.book.author %></div>
           </div>
           <div class="post-hidden"><%= link_to "読書メモを表示する", post_path(post) %></div>
@@ -20,7 +22,9 @@
       <% else %>
         <div class="post-list">
           <div class="post-upper">
-            <div class="post-upper-title"><%= post.book.title %></div>
+            <div class="post-upper-title">
+              <%= link_to post.book.title, book_path(post.book, user_id: post.book.user) %>
+            </div>
             <div class="post-upper-author"><%= post.book.author %></div>
           </div>
           <div class="post-memo"><%= link_to post.memo, post_path(post) %></div>
