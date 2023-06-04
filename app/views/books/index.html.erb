@@ -7,7 +7,7 @@
         <div class="book-list">
           <div class="book-information">
             <div class="book-information-title">
-              <%= link_to book.title, book_path(book) %>
+              <%= link_to book.title, book_path(book, user_id: @user) %>
             </div>
             <div class="book-information-author"><%= book.author %></div>
           </div>
