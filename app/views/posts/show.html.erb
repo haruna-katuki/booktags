@@ -2,7 +2,9 @@
   <div class="detail-main-content">
     <div class="post-detail">
       <div class="post-detail-upper">
-        <div class="post-detail-title"><%= @post.book.title %></div>
+        <div class="post-detail-title">
+          <%= link_to @post.book.title, book_path(@post.book, user_id: @post.book.user) %>
+        </div>
         <div class="post-detail-author"><%= @post.book.author %></div>
       </div>
       <div class="post-detail-memo"><%= @post.memo %></div>

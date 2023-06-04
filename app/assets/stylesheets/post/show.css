@@ -21,10 +21,14 @@
 }
 
 .post-detail-title {
-  font-size: 35px;
-  color: ivory;
   padding-left: 20px;
   overflow: hidden;
+}
+
+.post-detail-title a {
+  text-decoration: none;
+  font-size: 35px;
+  color: ivory;
 }
 
 .post-detail-author {
