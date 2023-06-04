@@ -65,10 +65,15 @@
 }
 
 .post-detail-nickname {
-  font-size: 20px;
-  color: #004F2A;
   margin-right: 20px;
 }
+
+.post-detail-nickname a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #004F2A;
+}
+
 
 .detail-btn {
   width: 850px;

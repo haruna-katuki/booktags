@@ -14,7 +14,9 @@
           <div class="post-detail-page"><%= @post.page %>ページ</div>
         <% end %>
         <div class="post-detail-time"><%= l @post.created_at %></div>
-        <div class="post-detail-nickname"><%= @post.book.user.nickname %></div>
+        <div class="post-detail-nickname">
+          <%= link_to @post.book.user.nickname, books_path(user_id: @post.book.user) %>
+        </div>
       </div>
     </div>
     <% if user_signed_in? && current_user.id == @post.book.user.id %>
