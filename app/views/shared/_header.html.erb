@@ -6,12 +6,12 @@
     <div>
       <ul class='lists-right'>
         <% if user_signed_in? %>
-          <li class="header-list"><%= link_to 'マイページ', books_path(user_id: current_user) %></li>
-          <li class="header-list"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-          <li class="header-list"><%= link_to '読書メモ', new_post_path %></li>
+          <li ><%= link_to 'マイページ', books_path(user_id: current_user), class: "header-list1" %></li>
+          <li ><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-list2" %></li>
+          <li ><%= link_to '読書メモ', new_post_path, class: "header-list3" %></li>
         <% else %>
-          <li class="header-list"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-          <li class="header-list"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+          <li ><%= link_to 'ログイン', new_user_session_path, class: "header-list4" %></li>
+          <li ><%= link_to '新規登録', new_user_registration_path, class: "header-list5" %></li>
         <% end %>
       </ul>
     </div>
