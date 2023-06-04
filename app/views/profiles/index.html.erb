@@ -4,7 +4,7 @@
     <% if @profile.present? %>
       <%= render partial: "profile", locals: { user: @user, profile: @profile } %>
     <% else %>
-      <div class="profile-btn"><%= link_to "プロフィールを登録する", new_profile_path %></div>
+      <div class="profile-btn"><%= link_to "プロフィールを登録する", new_profile_path(user_id: current_user) %></div>
     <% end %>
   </div>
 </div>
