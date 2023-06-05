@@ -11,7 +11,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to root_path
+      redirect_to new_post_path
     else
       render :new
     end
