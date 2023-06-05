@@ -6,6 +6,7 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
+require("../logo_under_line")
 require("../header_under_line")
 require("../index_title_under_line")
 require("../index_memo_under_line")
