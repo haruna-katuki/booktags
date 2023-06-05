@@ -1,5 +1,12 @@
 <div class="another-main-content">
-  <%= render partial: "shared/side_bar", locals: { user: @user } %>
+  <div class="side-bar">
+    <ul class="side-lists">
+      <li class="side-list-nickname"><%= @user.nickname %></li>
+      <li class="side-list"><%= link_to '読んだ本', books_path(user_id: @user), class: "side-list1" %></li>
+      <li class="side-list"><%= link_to 'プロフィール', profiles_path(user_id: @user), class: "side-list2" %></li>
+      <li class="side-list-select"><%= link_to 'いいね', likes_path(user_id: @user), class: "side-list-select-link" %></li>
+    </ul>
+  </div>
   <div class="right-content">
     <div class="book-nickname"><%= @user.nickname %>さんのいいね一覧</div>
     <div class="post-lists">
