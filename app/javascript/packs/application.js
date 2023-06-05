@@ -6,9 +6,12 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
-require("header_under_line")
-require("side_bar_under_line")
-require("side_bar_select_under_line")
+require("../header_under_line")
+require("../index_title_under_line")
+require("../index_memo_under_line")
+require("../index_user_under_line")
+require("../side_bar_under_line")
+require("../side_bar_select_under_line")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
