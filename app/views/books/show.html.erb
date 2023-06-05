@@ -1,5 +1,12 @@
 <div class="another-main-content">
-  <%= render partial: "shared/side_bar", locals: { user: @book.user } %>
+  <div class="side-bar">
+    <ul class="side-lists">
+      <li class="side-list-nickname"><%= @user.nickname %></li>
+      <li class="side-list-select"><%= link_to '読んだ本', books_path(user_id: @user), class: "side-list-select-link", id: "side_link" %></li>
+      <li class="side-list"><%= link_to 'プロフィール', profiles_path(user_id: @user), class: "side-item2" %></li>
+      <li class="side-list"><%= link_to 'いいね', likes_path(user_id: @user), class: "side-item3" %></li>
+    </ul>
+  </div>
   <div class="right-content">
     <div class="book-detail">
       <div class="book-detail-information">
@@ -23,10 +30,10 @@
       </div>
       <% if user_signed_in? && current_user.id == @book.user_id %>
         <div class="book-detail-btn">
-          <%= link_to edit_book_path(@book), method: :get, class: "book-edit-link" do %>
+          <%= link_to edit_book_path(@book, user_id: @user), method: :get, class: "book-edit-link" do %>
             <div class="book-edit-btn">編集</div>
           <% end %>
-          <%= link_to book_path(@book), method: :delete, class: "book-delete-link" do %>
+          <%= link_to book_path(@book, user_id: @user), method: :delete, class: "book-delete-link" do %>
             <div class="book-delete-btn">削除</div>
           <% end %>
         </div>
@@ -36,11 +43,11 @@
           <% @book.posts.order("created_at DESC").each do |post| %>
             <% if post.hidden_check %>
               <div class="book-post-list">
-                <div class="book-post-hidden"><%= link_to "読書メモを表示する", post_path(post) %></div>
+                <div class="book-post-hidden"><%= link_to "読書メモを表示する", post_path(post), id: "post_memo#{post.id}" %></div>
               </div>
             <% else %>
               <div class="book-post-list">
-                <div class="book-post-memo"><%= link_to post.memo, post_path(post) %></div>
+                <div class="book-post-memo"><%= link_to post.memo, post_path(post), id: "post_memo#{post.id}" %></div>
                   <% if post.page.present? %>
                     <div class="book-post-page"><%= post.page %>ページ</div>
                   <% end %>

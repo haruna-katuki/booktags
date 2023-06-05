@@ -14,7 +14,8 @@
 .logo a {
   text-decoration: none;
   color: ivory;
-  font-size: 25px;
+  font-size: 35px;
+  font-family: 'Karla', sans-serif;
 }
 
 .lists-right {
@@ -24,12 +25,12 @@
   justify-content: space-between;
 }
 
-.header-list a {
+.header-list1, .header-list2,.header-list3, .header-list4, .header-list5 {
   text-decoration: none;
   color: ivory;
   font-size: 18px;
 }
 
-.login {
+.header-list4 {
   margin-left: 175px;
 }

@@ -1,9 +1,10 @@
 class ProfilesController < ApplicationController
-  before_action :user_set, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :current_user_set, only: [:new, :create, :edit, :update, :destroy]
   before_action :profile_set, only: [:edit, :update, :destroy]
   before_action :user_self, only: [:edit, :update, :destroy]
 
   def index
+    @user = User.find(params[:user_id])
     @profile = @user.profile
   end
 
@@ -14,7 +15,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     if @profile.save
-      redirect_to action: :index
+      redirect_to profiles_path(user_id: @user)
     else
       render :new
     end
@@ -25,7 +26,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      redirect_to profiles_path
+      redirect_to profiles_path(user_id: @user)
     else
       render :edit
     end
@@ -33,12 +34,12 @@ class ProfilesController < ApplicationController
 
   def destroy
     @profile.destroy
-    redirect_to profiles_path
+    redirect_to profiles_path(user_id: @user)
   end
 
   private
 
-  def user_set
+  def current_user_set
     @user = current_user
   end
 

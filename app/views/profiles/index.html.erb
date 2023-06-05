@@ -1,10 +1,20 @@
 <div class="another-main-content">
-  <%= render partial: "shared/side_bar", locals: { user: @user } %>
+  <div class="side-bar">
+    <ul class="side-lists">
+      <li class="side-list-nickname"><%= @user.nickname %></li>
+      <li class="side-list"><%= link_to '読んだ本', books_path(user_id: @user), class: "side-item1" %></li>
+      <li class="side-list-select"><%= link_to 'プロフィール', profiles_path(user_id: @user), class: "side-list-select-link", id: "side_link" %></li>
+      <li class="side-list"><%= link_to 'いいね', likes_path(user_id: @user), class: "side-item3" %></li>
+    </ul>
+  </div>
   <div class="right-content">
     <% if @profile.present? %>
       <%= render partial: "profile", locals: { user: @user, profile: @profile } %>
     <% else %>
-      <div class="profile-btn"><%= link_to "プロフィールを登録する", new_profile_path %></div>
+      <div class="profile-nickname"><%= @user.nickname %>さんのプロフィール</div>
+    <% end %>
+    <% if @profile.nil? && current_user.id == @user.id %>
+      <div class="profile-btn"><%= link_to "プロフィールを登録する", new_profile_path(user_id: current_user) %></div>
     <% end %>
   </div>
 </div>

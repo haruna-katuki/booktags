@@ -1,0 +1,40 @@
+<% if post.hidden_check %>
+  <div class="post-hidden-list">
+    <div class="post-upper">
+      <div class="post-upper-title">
+        <%= link_to post.book.title, book_path(post.book, user_id: post.book.user), id: "post_title#{post.id}" %>
+      </div>
+      <div class="post-upper-author"><%= post.book.author %></div>
+    </div>
+    <div class="post-hidden"><%= link_to "読書メモを表示する", post_path(post), id: "post_memo#{post.id}" %></div>
+    <div class="post-under">
+      <div id="like-btn<%= post.id %>", class="post-under-like">
+        <%= render partial: "likes/like", locals: { post: post } %>
+      </div>
+      <div class="post-under-nickname">
+        <%= link_to post.book.user.nickname, books_path(user_id: post.book.user), id: "post_user#{post.id}" %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="post-list">
+    <div class="post-upper">
+      <div class="post-upper-title">
+        <%= link_to post.book.title, book_path(post.book, user_id: post.book.user), id: "post_title#{post.id}" %>
+      </div>
+      <div class="post-upper-author"><%= post.book.author %></div>
+    </div>
+    <div class="post-memo"><%= link_to post.memo, post_path(post), id: "post_memo#{post.id}" %></div>
+    <div class="post-under">
+      <div id="like-btn<%= post.id %>", class="post-under-like">
+        <%= render partial: "likes/like", locals: { post: post } %>
+      </div>
+      <% if post.page.present? %>
+        <div class="post-under-page"><%= post.page %>ページ</div>
+      <% end %>
+      <div class="post-under-nickname">
+        <%= link_to post.book.user.nickname, books_path(user_id: post.book.user), id: "post_user#{post.id}" %>
+      </div>
+    </div>
+  </div>
+<% end %>

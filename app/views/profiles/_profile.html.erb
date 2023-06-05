@@ -36,7 +36,7 @@
       <div class="profile-right-text"><%= profile.birth_date %></div>
     <% end %>
   </div>
-  <% if user_signed_in? && current_user.id == profile.user_id %>
+  <% if user_signed_in? && current_user.id == user.id %>
     <div class="book-detail-btn">
       <%= link_to edit_profile_path(profile), method: :get, class: "book-edit-link" do %>
         <div class="book-edit-btn">編集</div>

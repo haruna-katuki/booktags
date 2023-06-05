@@ -21,10 +21,14 @@
 }
 
 .post-detail-title {
-  font-size: 35px;
-  color: ivory;
   padding-left: 20px;
   overflow: hidden;
+}
+
+.post-detail-title a {
+  text-decoration: none;
+  font-size: 35px;
+  color: ivory;
 }
 
 .post-detail-author {
@@ -65,10 +69,15 @@
 }
 
 .post-detail-nickname {
-  font-size: 20px;
-  color: #004F2A;
   margin-right: 20px;
 }
+
+.post-detail-nickname a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #004F2A;
+}
+
 
 .detail-btn {
   width: 850px;

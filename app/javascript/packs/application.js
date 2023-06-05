@@ -4,9 +4,18 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("../shared/logo_under_line")
+require("../shared/header_under_line")
+require("../shared/side_bar_under_line")
+require("../shared/side_bar_select_under_line")
+require("../posts/index_title_under_line")
+require("../posts/index_memo_under_line")
+require("../posts/index_user_under_line")
+require("../posts/post_detail_title_under_line")
+require("../posts/post_detail_user_under_line")
+require("../books/book_title_under_line")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

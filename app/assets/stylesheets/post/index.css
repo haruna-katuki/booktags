@@ -40,10 +40,14 @@
 }
 
 .post-upper-title {
-  font-size: 20px;
-  color: ivory;
   margin-left: 20px;
   overflow: hidden;
+}
+
+.post-upper-title a {
+  text-decoration: none;
+  font-size: 20px;
+  color: ivory;
 }
 
 .post-upper-author {
@@ -63,12 +67,6 @@
 
 .post-hidden a {
   text-decoration: none;
-  color: #004F2A;
-}
-
-.post-hidden-nickname {
-  text-align: right;
-  padding-right: 20px;
   color: #004F2A;
 }
 
@@ -130,5 +128,9 @@
 
 .post-under-nickname {
   margin-right: 20px;
+}
+
+.post-under-nickname a {
+  text-decoration: none;
   color: #004F2A;
 }
