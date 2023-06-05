@@ -4,46 +4,8 @@
     <div class="book-nickname"><%= @user.nickname %>さんのいいね一覧</div>
     <div class="post-lists">
       <% @likes.each do |like| %>
-        <% if like.post.hidden_check %>
-        <div class="post-hidden-list">
-          <div class="post-upper">
-            <div class="post-upper-title">
-              <%= link_to like.post.book.title, book_path(like.post.book, user_id: like.post.book.user) %>
-            </div>
-            <div class="post-upper-author"><%= like.post.book.author %></div>
-          </div>
-          <div class="post-hidden"><%= link_to "読書メモを表示する", post_path(like.post) %></div>
-          <div class="post-under">
-            <div id="like-btn<%= like.post.id %>", class="post-under-like">
-              <%= render partial: "likes/like", locals: { post: like.post } %>
-            </div>
-            <div class="post-under-nickname">
-              <%= link_to like.post.book.user.nickname, books_path(user_id: like.post.book.user) %>
-            </div>
-          </div>
-        </div>
-      <% else %>
-        <div class="post-list">
-          <div class="post-upper">
-            <div class="post-upper-title">
-              <%= link_to like.post.book.title, book_path(like.post.book, user_id: like.post.book.user) %>
-            </div>
-            <div class="post-upper-author"><%= like.post.book.author %></div>
-          </div>
-          <div class="post-memo"><%= link_to like.post.memo, post_path(like.post) %></div>
-          <div class="post-under">
-            <div id="like-btn<%= like.post.id %>", class="post-under-like">
-              <%= render partial: "likes/like", locals: { post: like.post } %>
-            </div>
-            <% if like.post.page.present? %>
-              <div class="post-under-page"><%= like.post.page %>ページ</div>
-            <% end %>
-            <div class="post-under-nickname">
-              <%= link_to like.post.book.user.nickname, books_path(user_id: like.post.book.user) %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+        <% post = like.post %>
+        <%= render partial: "posts/post", locals: {post: post} %>
       <% end %>
     </div>
   </div>
