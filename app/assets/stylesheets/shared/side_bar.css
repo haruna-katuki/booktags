@@ -18,9 +18,19 @@
 .side-list {
   height: 40px;
   width: 150px;
-  background-color: #004F2A;
+  background-color: ivory;
+  border: #004F2A 2px solid;
   font-size: 18px;
-  color: ivory;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-list-select {
+  height: 40px;
+  width: 150px;
+  background-color: #004F2A;
   margin-bottom: 35px;
   display: flex;
   justify-content: center;
@@ -29,11 +39,19 @@
 
 .side-list-nickname {
   font-size: 20px;
+  font-weight: bold;
   color: #004F2A;
   margin-bottom: 35px;
 }
 
-.side-list a {
+.side-list1, .side-list2, .side-list3 {
   text-decoration: none;
+  font-size: 18px;
+  color: #004F2A;
+}
+
+.side-list-select-link {
+  text-decoration: none;
+  font-size: 18px;
   color: ivory;
 }
