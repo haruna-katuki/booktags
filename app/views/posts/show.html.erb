@@ -3,7 +3,7 @@
     <div class="post-detail">
       <div class="post-detail-upper">
         <div class="post-detail-title">
-          <%= link_to @post.book.title, book_path(@post.book, user_id: @post.book.user) %>
+          <%= link_to @post.book.title, book_path(@post.book, user_id: @post.book.user), id: "post_detail_title" %>
         </div>
         <div class="post-detail-author"><%= @post.book.author %></div>
       </div>
@@ -17,7 +17,7 @@
         <% end %>
         <div class="post-detail-time"><%= l @post.created_at %></div>
         <div class="post-detail-nickname">
-          <%= link_to @post.book.user.nickname, books_path(user_id: @post.book.user) %>
+          <%= link_to @post.book.user.nickname, books_path(user_id: @post.book.user), id: "post_detail_user" %>
         </div>
       </div>
     </div>
