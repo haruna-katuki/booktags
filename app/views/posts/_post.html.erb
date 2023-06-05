@@ -2,7 +2,7 @@
   <div class="post-hidden-list">
     <div class="post-upper">
       <div class="post-upper-title">
-        <%= link_to post.book.title, book_path(post.book, user_id: post.book.user) %>
+        <%= link_to post.book.title, book_path(post.book, user_id: post.book.user) id: "post_title" %>
       </div>
       <div class="post-upper-author"><%= post.book.author %></div>
     </div>

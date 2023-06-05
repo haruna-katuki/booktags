@@ -2,9 +2,9 @@
   <div class="side-bar">
     <ul class="side-lists">
       <li class="side-list-nickname"><%= @user.nickname %></li>
-      <li class="side-list"><%= link_to '読んだ本', books_path(user_id: @user), class: "side-list1" %></li>
-      <li class="side-list-select"><%= link_to 'プロフィール', profiles_path(user_id: @user), class: "side-list-select-link" %></li>
-      <li class="side-list"><%= link_to 'いいね', likes_path(user_id: @user), class: "side-list3" %></li>
+      <li class="side-list"><%= link_to '読んだ本', books_path(user_id: @user), class: "side-item1" %></li>
+      <li class="side-list-select"><%= link_to 'プロフィール', profiles_path(user_id: @user), class: "side-list-select-link", id: "side_link" %></li>
+      <li class="side-list"><%= link_to 'いいね', likes_path(user_id: @user), class: "side-item3" %></li>
     </ul>
   </div>
   <div class="right-content">
