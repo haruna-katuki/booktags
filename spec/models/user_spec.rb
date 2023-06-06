@@ -29,12 +29,13 @@ RSpec.describe User, type: :model do
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        binding.pry
         expect(another_user.errors.full_messages).to include("Eメールはすでに存在します")
       end
 
       it 'emailは@を含まないと登録できない' do
-        
+        @user.email = "aaa"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Eメールは不正な値です")
       end
 
       it "passwordが空では登録できない" do
