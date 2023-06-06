@@ -51,6 +51,9 @@ RSpec.describe Book, type: :model do
       end
 
       it "total_pageが半角数字でないと登録できない" do
+        @book.total_page = "１２３"
+        @book.valid?
+        expect(@book.errors.full_messages).to include("総ページ数は半角数字で入力してください")
       end
 
       it "userが紐づいていないと登録できない" do
