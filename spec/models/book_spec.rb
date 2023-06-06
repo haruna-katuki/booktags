@@ -12,6 +12,8 @@ RSpec.describe Book, type: :model do
       end
 
       it "translatorが空でも登録できる" do
+        @book.translator = ""
+        expect(@book).to be_valid
       end
 
       it "publisherが空でも登録できる" do
