@@ -22,6 +22,10 @@
   font-weight: bold;
 }
 
+.login-flash-message {
+  color: #004F2A;
+}
+
 .field {
   margin-top: 15px;
 }
