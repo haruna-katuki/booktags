@@ -60,3 +60,5 @@ group :production do
 end
 
 gem 'pry-rails'
+
+gem 'rails-i18n'
