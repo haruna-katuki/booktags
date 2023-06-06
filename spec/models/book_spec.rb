@@ -32,6 +32,8 @@ RSpec.describe Book, type: :model do
       end
 
       it "start_dateが空でも登録できる" do
+        @book.start_date = ""
+        expect(@book).to be_valid
       end
     end
 
