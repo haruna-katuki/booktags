@@ -14,7 +14,7 @@
         <div class="book-list">
           <div class="book-information">
             <div class="book-information-title">
-              <%= link_to book.title, book_path(book, user_id: @user), id: "book_title#{book.id}" %>
+              <%= link_to book.title, book_path(book, user_id: @user), id: "book_index_title#{book.id}" %>
             </div>
             <div class="book-information-author"><%= book.author %></div>
           </div>
