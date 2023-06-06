@@ -45,6 +45,9 @@ RSpec.describe Book, type: :model do
       end
 
       it "authorが空では登録できない" do
+        @book.author = ""
+        @book.valid?
+        expect(@book.errors.full_messages).to include("編著者を入力してください")
       end
 
       it "total_pageが半角数字でないと登録できない" do
