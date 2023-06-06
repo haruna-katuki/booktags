@@ -22,6 +22,8 @@ RSpec.describe Book, type: :model do
       end
 
       it "publish_yearが空でも登録できる" do
+        @book.publish_year = ""
+        expect(@book).to be_valid
       end
 
       it "total_pageが空でも登録できる" do
