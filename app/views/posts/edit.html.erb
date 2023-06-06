@@ -5,37 +5,40 @@
       <div class="book-btn">本を登録する</div>
     <% end %>
     <%= form_with model: @post, local: true do |f| %>
-      <div class="field">
-        <div class="text">
-          本を選択してください
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class="fields">
+        <div class="field">
+          <div class="text">
+            本を選択してください
+          </div>
+          <select name="post[book_id]", class="post-pull-down">
+            <% @user.books.order("created_at DESC").each do |book| %>
+              <option value=<%= book.id %>><%= book.title %></option>
+            <% end %>
+          </select>
         </div>
-        <select name="post[book_id]", class="post-pull-down">
-          <% @user.books.order("created_at DESC").each do |book| %>
-            <option value=<%= book.id %>><%= book.title %></option>
-          <% end %>
-        </select>
-      </div>
-      <div class="field">
-        <div class="post-text">
-          読書メモ(300字まで)
+        <div class="field">
+          <div class="post-text">
+            読書メモ(300字まで)
+          </div>
+          <%= f.text_area :memo, placeholder:"読書メモ(300字まで)", class: "post-field-memo" %>
         </div>
-        <%= f.text_area :memo, placeholder:"読書メモ(300字まで)", class: "post-field-memo" %>
-      </div>
-      <div class="field">
-        <div class="text">
-          ページ数(任意)
+        <div class="field">
+          <div class="text">
+            ページ数(任意)
+          </div>
+          <%= f.text_field :page, placeholder:"ページ数(任意)", class: "form-field" %>
         </div>
-        <%= f.text_field :page, placeholder:"ページ数(任意)", class: "form-field" %>
-      </div>
-      <div class="post-field-check-box">
-        <div class="text">
-          ！ネタバレ防止で非表示にする！
+        <div class="post-field-check-box">
+          <div class="text">
+            ！ネタバレ防止で非表示にする！
+          </div>
+          <% f.label :hidden_check %>
+          <%= f.check_box :hidden_check, class: "check-box" %>
         </div>
-        <% f.label :hidden_check %>
-        <%= f.check_box :hidden_check, class: "check-box" %>
-      </div>
-      <div class="form-under">
-        <%= f.submit "編集する" ,class:"contribute-btn" %>
+        <div class="form-under">
+          <%= f.submit "編集する" ,class:"contribute-btn" %>
+        </div>
       </div>
     <% end %>
   </div>
