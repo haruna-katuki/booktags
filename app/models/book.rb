@@ -6,5 +6,5 @@ class Book < ApplicationRecord
     validates :title
     validates :author
   end
-  validates :total_page, numericality: { only_integer: true, message: "は半角数字で入力してください" }
+  validates :total_page, numericality: { only_integer: true, message: "は半角数字で入力してください" }, allow_blank: true
 end
