@@ -5,6 +5,6 @@ class Book < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :author
-    validates :total_page, numericality: { only_integer: true }
+    validates :total_page, numericality: { only_integer: true, message: "は半角数字で入力してください" }, allow_blank: true
   end
 end

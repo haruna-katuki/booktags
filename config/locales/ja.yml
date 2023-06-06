@@ -11,4 +11,7 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-      
+      book:
+        title: タイトル
+        author: 編著者
+        total_page: 総ページ数      
