@@ -39,6 +39,9 @@ RSpec.describe Book, type: :model do
 
     context "新規登録できない場合" do
       it "titleが空では登録できない" do
+        @book.title = ""
+        @book.valid?
+        expect(@book.errors.full_messages).to include("タイトルを入力してください")
       end
 
       it "authorが空では登録できない" do
