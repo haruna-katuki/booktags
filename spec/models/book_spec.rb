@@ -8,6 +8,7 @@ RSpec.describe Book, type: :model do
   describe "本新規登録" do
     context "新規登録できる場合" do
       it "titleとauthorとtranslatorとpublisherとpublish_yearとtotal_pageとstart_dateとuserが存在すれば登録できる" do
+        expect(@book).to be_valid
       end
 
       it "translatorが空でも登録できる" do
