@@ -27,6 +27,8 @@ RSpec.describe Book, type: :model do
       end
 
       it "total_pageが空でも登録できる" do
+        @book.total_page = ""
+        expect(@book).to be_valid
       end
 
       it "start_dateが空でも登録できる" do
