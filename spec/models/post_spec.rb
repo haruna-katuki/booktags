@@ -42,6 +42,9 @@ RSpec.describe Post, type: :model do
       end
 
       it "pageが半角数字でないと投稿できない" do
+        @post.page = "１２３"
+        @post.valid?
+        expect(@post.errors.full_messages).to include("ページ数は半角数字で入力してください")
       end
     end
   end
