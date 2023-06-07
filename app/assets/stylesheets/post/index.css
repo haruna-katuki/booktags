@@ -81,6 +81,7 @@
 
 .post-under {
   height: 35px;
+  margin-bottom: 8px;
   display: flex;
   justify-content: right;
   align-items: center;
