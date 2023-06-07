@@ -36,6 +36,9 @@ RSpec.describe Post, type: :model do
       end
 
       it "memoが301文字以上だと投稿できない" do
+        @post.memo = Faker::Lorem.characters(number: 301)
+        @post.valid?
+        expect(@post.errors.full_messages).to include("感想メモは300文字以内で入力してください")
       end
 
       it "pageが半角数字でないと投稿できない" do
