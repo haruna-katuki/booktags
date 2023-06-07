@@ -8,6 +8,7 @@ RSpec.describe Profile, type: :model do
   describe "プロフィール新規登録" do
     context "新規登録できる場合" do
       it "favorite_genreとfavorite_book1とfavorite_book2とfavorite_book3とfavorite_author1とfavorite_author2とfavorite_author3とbirth_dateが存在すれば登録できる" do
+        expect(@profile).to be_valid
       end
 
       it "favorite_genreが空でも登録できる" do
