@@ -54,12 +54,18 @@
 
 .post-detail-under-like {
   height: 35px;
-  margin-right: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   left: 20px;
+}
+
+.like-count {
+  font-size: 20px;
+  color: #F68B1E;
+  position: absolute;
+  left: 130px;
 }
 
 .post-detail-page, .post-detail-time {
