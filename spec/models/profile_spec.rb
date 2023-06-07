@@ -47,6 +47,8 @@ RSpec.describe Profile, type: :model do
       end
 
       it "birth_dateが空でも登録できる" do
+        @profile.birth_date = ""
+        expect(@profile).to be_valid
       end
     end
 
