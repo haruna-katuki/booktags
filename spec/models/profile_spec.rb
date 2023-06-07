@@ -54,6 +54,9 @@ RSpec.describe Profile, type: :model do
 
     context "新規登録できない場合" do
       it "userが紐づいていないと登録できない" do
+        @profile.user = nil
+        @profile.valid?
+        expect(@profile.errors.full_messages).to include("Userを入力してください")
       end
     end
   end
