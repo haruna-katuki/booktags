@@ -8,6 +8,7 @@ RSpec.describe Post, type: :model do
   describe "読書メモ新規投稿" do
     context "新規投稿できる場合" do
       it "bookとmemoとpageが存在し、hidden_checkがtrueであれば投稿できる" do
+        expect(@post).to be_valid
       end
 
       it "pageが空でも投稿できる" do
