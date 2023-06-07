@@ -3,34 +3,40 @@
     <div class="devise-text">ログイン</div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <div class="field-text">
-            メールアドレス
-        </div>
-        <% f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
       </div>
-
-      <div class="field">
-        <div class="field-text">
-            パスワード
-        </div>
-        <% f.label :password %>
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="remember-check">
+      <div class="fields">
+        <div class="field">
           <div class="field-text">
-            ログイン情報を保持する
+              メールアドレス
           </div>
-          <%= f.check_box :remember_me, class: "remember-check-box" %>
-          <% f.label :remember_me %>
+          <% f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
-      <% end %>
 
-      <div class="actions">
-        <%= f.submit "Log in", class: "action-btn" %>
+        <div class="field">
+          <div class="field-text">
+              パスワード
+          </div>
+          <% f.label :password %>
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="remember-check">
+            <div class="field-text">
+              ログイン情報を保持する
+            </div>
+            <%= f.check_box :remember_me, class: "remember-check-box" %>
+            <% f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Log in", class: "action-btn" %>
+        </div>
       </div>
     <% end %>
   </div>

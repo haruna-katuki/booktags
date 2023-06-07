@@ -1,5 +1,5 @@
 window.addEventListener('load', function() {
-  const postMemoUnderLines = document.querySelectorAll(`[id^='post_memo']`);
+  const postMemoUnderLines = document.querySelectorAll(`[id^='post_index_memo']`);
 
   postMemoUnderLines.forEach(function(postMemoUnderLine) {
     postMemoUnderLine.addEventListener('mouseover', function() {

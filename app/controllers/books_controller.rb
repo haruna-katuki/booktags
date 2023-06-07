@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_user, only: [:index, :show]
+  before_action :set_current_user, only: [:edit, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :user_self, only: [:edit, :update, :destroy]
 
@@ -48,6 +49,10 @@ class BooksController < ApplicationController
 
   def set_user
     @user = User.find(params[:user_id])
+  end
+
+  def set_current_user
+    @user = current_user
   end
 
   def set_book

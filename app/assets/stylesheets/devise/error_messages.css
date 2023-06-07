@@ -1,0 +1,14 @@
+.error-explanation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-explanation h2 {
+  color: #004F2A;
+}
+
+.error-message-list {
+  color: #004F2A;
+  text-align: center;
+}

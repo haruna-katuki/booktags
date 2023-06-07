@@ -43,11 +43,11 @@
           <% @book.posts.order("created_at DESC").each do |post| %>
             <% if post.hidden_check %>
               <div class="book-post-list">
-                <div class="book-post-hidden"><%= link_to "読書メモを表示する", post_path(post), id: "post_memo#{post.id}" %></div>
+                <div class="book-post-hidden"><%= link_to "読書メモを表示する", post_path(post), id: "post_index_memo#{post.id}" %></div>
               </div>
             <% else %>
               <div class="book-post-list">
-                <div class="book-post-memo"><%= link_to post.memo, post_path(post), id: "post_memo#{post.id}" %></div>
+                <div class="book-post-memo"><%= link_to post.memo, post_path(post), id: "post_index_memo#{post.id}" %></div>
                   <% if post.page.present? %>
                     <div class="book-post-page"><%= post.page %>ページ</div>
                   <% end %>
