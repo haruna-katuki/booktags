@@ -12,6 +12,8 @@ RSpec.describe Post, type: :model do
       end
 
       it "pageが空でも投稿できる" do
+        @post.page = ""
+        expect(@post).to be_valid
       end
 
       it "hidden_checkがfalseでも投稿できる" do
