@@ -48,7 +48,9 @@
             <% else %>
               <div class="book-post-list">
                 <div class="book-post-memo"><%= link_to post.memo, post_path(post), id: "post_index_memo#{post.id}" %></div>
-                  <% if post.page.present? %>
+                  <% if @book.total_page.present? && post.page.present? %>
+                    <div class="book-post-page"><%= post.page %>/<%= @book.total_page %>ページ</div>
+                  <% elsif post.page.present? %>
                     <div class="book-post-page"><%= post.page %>ページ</div>
                   <% end %>
               </div>
