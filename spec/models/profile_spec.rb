@@ -17,6 +17,8 @@ RSpec.describe Profile, type: :model do
       end
 
       it "favorite_book1が空でも登録できる" do
+        @profile.favorite_book1 = ""
+        expect(@profile).to be_valid
       end
 
       it "favorite_book2が空でも登録できる" do
