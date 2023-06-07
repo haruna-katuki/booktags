@@ -24,6 +24,9 @@ RSpec.describe Post, type: :model do
 
     context "新規投稿できない場合" do
       it "bookが紐づいていないと投稿できない" do
+        @post.book = nil
+        @post.valid?
+        expect(@post.errors.full_messages).to include("Bookを入力してください")
       end
 
       it "memoが空では投稿できない" do
