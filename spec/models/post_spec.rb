@@ -30,6 +30,9 @@ RSpec.describe Post, type: :model do
       end
 
       it "memoが空では投稿できない" do
+        @post.memo = ""
+        @post.valid?
+        expect(@post.errors.full_messages).to include("感想メモを入力してください")
       end
 
       it "memoが301文字以上だと投稿できない" do
