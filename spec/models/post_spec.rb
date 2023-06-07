@@ -17,6 +17,8 @@ RSpec.describe Post, type: :model do
       end
 
       it "hidden_checkがfalseでも投稿できる" do
+        @post.hidden_check = "false"
+        expect(@post).to be_valid
       end
     end
 
